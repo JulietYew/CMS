@@ -1,6 +1,6 @@
 const Categories = require('../model/categories.model');
 
-class PostsService {
+class CategoryService {
     // create a post
     async createPost (newCategory){
         return await Categories.create(newCategory)
@@ -26,4 +26,4 @@ class PostsService {
 
 }
 
-module.exports = new PostsService();
+module.exports = new CategoryService();
