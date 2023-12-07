@@ -5,7 +5,7 @@ const  User= require('./user.model')
 // A model that describes the structure of the post database
 
 const postsSchema = new mongoose.Schema({
-    // A single post on the POST IT app
+    // A single post on the CMS 
   post: { 
     type: String,
     required: true 
@@ -14,11 +14,11 @@ const postsSchema = new mongoose.Schema({
 // a reference to the user making a single post
   user: { 
     type: mongoose.Schema.Types.ObjectId,
-    ref: User, 
-    required: true, 
+    ref: 'User', 
+    required: true
 },
 }, {timestamps: true}
 );
 
-const Posts= mongoose.model('posts', postsSchema);
-module.exports = Posts;
+const posts= mongoose.model('posts', postsSchema);
+module.exports = posts;
